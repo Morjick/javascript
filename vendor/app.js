@@ -1,4 +1,4 @@
-// console.log('Работает!')
+ console.log('Работает!')
 
 async function getPosts() {
   const response = await fetch('https://jsonplaceholder.typicode.com/posts/', {
