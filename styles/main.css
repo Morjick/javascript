@@ -1,0 +1,32 @@
+#wrapper {
+  width: 700px;
+
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.post {
+  width: 100%;
+
+  padding: 20px;
+  border: 1px solid #f8f8f8;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.post span {
+  display: block;
+
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.post p {
+  line-height: 24px;
+  margin: 10px 0;
+  padding: 0 10px;
+  max-width: 500px;
+}
