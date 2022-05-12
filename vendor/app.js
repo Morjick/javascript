@@ -1,5 +1,3 @@
- console.log('Работает!')
-
 async function getPosts() {
   const response = await fetch('https://jsonplaceholder.typicode.com/posts/', {
     headers: {
@@ -10,26 +8,28 @@ async function getPosts() {
   })
 
   const posts = await response.json()
-  
-  console.log(posts)
+  const users = []
 
   const wrapper = document.getElementById('wrapper')
 
-  posts.forEach( (element) => {
-      const div = document.createElement('div')
-      const span = document.createElement('span')
-      const p = document.createElement('p')
+  posts.forEach((element) => {
+    const title = element.title
+    const body = element.body
+    let sender 
 
-      div.id = 'post-' + element.id
-      div.classList.add('post')
+    users.forEach((user) => {
+      if(element.id == sender.id) sender = user.name
+    })
 
-      p.textContent = element.body
-      span.textContent = element.title
+    const post = `
+      <div class="post">
+        <span>${title}</span>
+        <p>${body}</p>
+        <span>${sender}</span>
+      </div>
+    `
 
-      div.prepend(span)
-      div.append(p)
-
-      wrapper.append(div)
+    wrapper.append(post)
   })
 }
 
